@@ -85,7 +85,7 @@ Submit.TextScaled = true
 Submit.TextSize = 14
 Submit.TextWrapped = true
 Submit.MouseButton1Click:Connect(function()
-loadstring(game:HttpGet(('https://raw.githubusercontent.com/davit138/dzr/main/wl?token=AEHXUFKUNEIHZISJVAF2KHTAWT6H6'),true))()
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/davit138/dzr/main/wl'),true))()
 end)
 
 Bars.Name = "Bars"
