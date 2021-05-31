@@ -2,12 +2,12 @@
 
 local Usernames = {
 ["Dzr"] = true;
-["Admin"] = true
+["Admin"] = true;
 }
 
 local Passwords = {
 ["Dzr"] = true;
-["admin123"] = true
+["admin123"] = true;
 }
 
 
