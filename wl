@@ -41,7 +41,7 @@ end
 
 if Userpassed == true then
 if WLPassed == true then
-loadstring(game:HttpGet("https://raw.githubusercontent.com/davit138/dzr/main/script?token=AEHXUFPUQMQVGCJI762GDJTAWT4LQ", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/davit138/dzr/main/script?token=AEHXUFKZNB27KIGXQ4DCX6DAWT7BO"))()
 print("Isaaa#9671 sexy")
 
 
