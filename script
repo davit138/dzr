@@ -1,0 +1,141 @@
+--[[
+Funny meme script for roblox game super important11!!!!11
+Made by Isaaa#9671, https://v3rmillion.net/member.php?action=profile&uid=1002229
+Lib made by stitch the elite#9709
+]]
+
+for _, gui in pairs(game:GetService("CoreGui").RobloxGui:GetChildren()) do
+   if gui:IsA("ScreenGui") and string.match(gui.Name, "_XIK") then
+       gui:Destroy()
+   end
+end
+
+for _, gui in pairs(game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"):GetChildren()) do
+   if gui:IsA("ScreenGui") and string.match(gui.Name, "_XIK") then
+       gui:Destroy()
+   end
+end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/rodus", true))() 
+
+CreateMain(tostring(math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9)..math.random(0, 9).."_XIK")) 
+
+CreateTab("Local Player") 
+
+CreateLabel(tabs['Local Player'], "Local Player Scripts", Color3.fromRGB(0,255,0)) 
+
+CreateButton(tabs['Local Player'], "Anti-AFK", "Anti-AFK (Execute once)",function() 
+	for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+    v:Disable()
+    end
+	print("Anti-AFK Enabled!")
+end)
+
+--[[
+CreateTextBox(tabs['Local Player'], "WalkSpeed", "Set your WalkSpeed!",function(arg) 
+    game:GetService("").LocalPlayer.Character.Humanoid.WalkSpeed = (arg) or 16
+	print("Changed Walkspeed to: "..arg) -- arg is used to check the text
+end)
+
+CreateTextBox(tabs['Local Player'], "JumpPower", "Set your JumpPower!",function(arg) 
+    game:GetService("Players").LocalPlayer.Character.Humanoid.JumpPower = (arg) or 16
+	print("Changed Jumppower to: "..arg) -- arg is used to check the text
+end)
+--]]
+
+CreateToggle(tabs['Local Player'], "Infinite Jump", "Enable/Disable Infinite Jump!",function() 
+    print(toggled) -- toggled is the thing used to toggle <true/false>
+local Player = game:GetService("Players").LocalPlayer
+local Mouse = Player:GetMouse()
+Mouse.KeyDown:connect(function(k)
+if k:byte() == 32 then
+Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+Humanoid:ChangeState("Jumping")
+wait(0.1)
+Humanoid:ChangeState("Seated")
+end
+end)
+end)
+-- END OF LOCAL PLAYER, START OF TELEPORTS
+CreateTab("Teleports") 
+
+CreateLabel(tabs['Teleports'], "Player Teleports", Color3.fromRGB(0,255,0))
+
+CreateButton(tabs['Teleports'], "Safezone", "Teleport to the Safezone!",function()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(5516.69531, 1473.92139, -3522.56079) --Coordinates.
+    print("Teleported!")
+end)
+
+CreateButton(tabs['Teleports'], "Church", "Teleport to the Church!",function() 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(384.970337, 905.787537, 726.537659) --Coordinates.
+    print("Teleported!")
+end)
+
+CreateButton(tabs['Teleports'], "Abandoned Safezone", "Teleport to the Abandoned SZ!",function() 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1405.97925, 933.700623, 2496.36865) --Coordinates.
+    print("Teleported!")
+end)
+
+CreateButton(tabs['Teleports'], "Airfield", "Teleport to the Airfield!",function() 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(108.569679, 896.977356, 2718.35449) --Coordinates.
+    print("Teleported!")
+end)
+
+CreateButton(tabs['Teleports'], "Boss Spawn", "Teleport to the Boss Spawn!(Baal,etc)",function() 
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1181.52466, 902.499695, -1610.81836) --Coordinates.
+    print("Teleported!")
+end)
+
+-- END OF JOBS, START OF TEAMS
+CreateTab("Item Spawn")
+
+CreateLabel(tabs['Item Spawn'], "Spawn Items", Color3.fromRGB(0,255,0)) 
+
+CreateTextBox(tabs['Item Spawn'], "Spawn Item", "Spawn an Item!",function(arg) 
+    item = arg
+    count = 1
+    for i=1,count do
+    player = game.Players.LocalPlayer.Name
+    s = game.ReplicatedStorage.assets.items["item"..item]:Clone()
+    s.Parent = game.Workspace.targetFilter.ignore.items
+    s:MoveTo(game.Workspace.targetFilter[player.."Ignore"][player]["Left Leg"].Position)
+    for i,v in pairs(s:GetChildren()) do
+    if v.className == "Part" then
+    v.Anchored = true
+    v.CFrame = game.Workspace.targetFilter[player.."Ignore"][player]["Head"].CFrame
+    end
+    end
+    end	
+	print("Spawned Item: "..arg) -- arg is used to check the text
+end)
+
+CreateTextBox(tabs['Item Spawn'], "Spawn Vehicle", "Spawn a Vehicle!",function(arg) 
+    local new = game.ReplicatedStorage.assets.vehicles[arg]:Clone()
+    new.Parent = workspace.targetFilter.ignore.vehicles
+    new:MoveTo(workspace.targetFilter.Xhiliration_GamingIgnore.Xhiliration_Gaming.Torso.Position + Vector3.new(math.random(-10,10),0,math.random(-10,10)))
+    t ={"arg"}
+    for i = 1, #t do
+    arg(t[i])
+    end
+	print("Spawned Vehicle: "..arg) -- arg is used to check the text
+end)
+
+CreateButton(tabs['Item Spawn'], "Print Item List", "Print Items (Causes Lag)",function() 
+	local children = game.ReplicatedStorage.assets.items:GetChildren() --edit your folder name
+    print("ITEM NAMES")
+    print("----------------------")
+    for i, child in ipairs(children) do
+    print(child.Name)
+    end
+    print("----------------------")
+end)
+
+CreateButton(tabs['Item Spawn'], "Print Vehicle List", "Print Vehicles",function() 
+	local children = game.ReplicatedStorage.assets.vehicles:GetChildren() --edit your folder name
+    print("VEHICLE NAMES")
+    print("----------------------")
+    for i, child in ipairs(children) do
+    print(child.Name)
+    end
+    print("----------------------")
+end)
